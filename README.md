@@ -9,7 +9,12 @@ Grab the Galaxy CLI
 
 Provision a local environment and use it
 ========================================
-    ./galaxy environment provision-local --repository https://raw.github.com/mattstep/galaxy-sample-repo/master/ mygalaxy /tmp/mygalaxy/
+    ./galaxy environment \
+             provision-local \
+             --repository https://raw.github.com/mattstep/galaxy-sample-repo/master/ \
+             mygalaxy \
+             /tmp/mygalaxy/
+
     ./galaxy environment use mygalaxy
 
 Install the sample server, show it, and start it
@@ -21,7 +26,8 @@ Install the sample server, show it, and start it
 
 Do some stuff to the sample server
 ==================================
-    curl -X PUT -H'Content-Type:application/json' -d'{"email":"mattstep@mattstep.net", "name":"Matt Stephenson"}' localhost:8080/v1/person/mattstep
+    curl -X PUT -H'Content-Type:application/json' \
+         -d'{"email":"mattstep@mattstep.net", "name":"Matt Stephenson"}' localhost:8080/v1/person/mattstep
     curl localhost:8080/v1/person
     curl localhost:8080/v1/person/mattstep
     curl -X DELETE localhost:8080/v1/person/mattstep
